@@ -1,0 +1,21 @@
+<div class="container text-muted text-center pt-4">
+    <span>Arrange the notes so that the lowest note is the leftmost and the highest note the rightmost. Click on the block to hear the note. Drag and drop to swap the notes/blocks. If the block gets colored green, then the note is in the right position.</span>
+    <div class="py-5">
+        <i class="float-left material-icons" style="font-size: 30px;">arrow_downward</i>
+        <i class="float-right material-icons" style="font-size: 30px;">arrow_upward</i>
+        <div class="d-flex flex-wrap">            
+            <div *ngFor = "let note of notes; index as i" 
+            appBoardEvents 
+            [note] = "note" 
+            [notes] = "notes"
+            [index] = "i" 
+            [ngClass] = "note.className"
+            [style.background-color]="checkNotePosition(i, note)"
+            [style.outline]="checkIfHovered(note)">
+            </div>
+        </div>
+    </div>
+    <nav>
+        <button class="btn btn-outline-primary btn-lg" routerLink="/gameselect">New game</button>
+    </nav>
+</div>
