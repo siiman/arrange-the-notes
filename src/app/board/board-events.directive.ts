@@ -1,5 +1,5 @@
 import { Directive, Input, HostBinding, HostListener, Output } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Note } from './note/note';
 
